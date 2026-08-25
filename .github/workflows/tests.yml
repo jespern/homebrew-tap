@@ -1,0 +1,44 @@
+name: test
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "Formula/**"
+  workflow_dispatch:
+
+permissions: {}
+
+defaults:
+  run:
+    shell: bash -xeuo pipefail {0}
+
+jobs:
+  install:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-26]
+        include:
+          - os: ubuntu-latest
+            container:
+              image: ghcr.io/homebrew/brew:main
+              options: --privileged
+    runs-on: ${{ matrix.os }}
+    container: ${{ fromJSON(toJSON(matrix.container)) }} # zizmor: ignore[unpinned-images]
+    permissions:
+      contents: read
+    steps:
+      - name: Set up Homebrew
+        id: setup-homebrew
+        uses: Homebrew/actions/setup-homebrew@8f3d1ec8a696b3b9d9a6c3696b6c73033cab69e4 # 2026.08.14.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install and test Marlin
+        env:
+          TAP_NAME: ${{ steps.setup-homebrew.outputs.tap-name }}
+        run: |
+          brew install --formula "$TAP_NAME/marlin"
+          brew test "$TAP_NAME/marlin"
