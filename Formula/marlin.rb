@@ -7,24 +7,24 @@ class Marlin < Formula
   on_macos do
     on_arm do
       url "https://github.com/jespern/marlin/releases/download/v#{version}/marlin-aarch64-darwin.tar.gz"
-      sha256 "c7695fe35ea77e1b8048804bfaf9cd7d5065a40e5d17f9b5fcb8701616716083"
+      sha256 "001b8c481f08cdbd3b11d11f27cda63cda5eef7aa32c31648797370c7346a338"
     end
 
     on_intel do
       url "https://github.com/jespern/marlin/releases/download/v#{version}/marlin-x86_64-darwin.tar.gz"
-      sha256 "b803da493e12bbb80a97ed7eb41f246eb2d113f7f3d3df565580e538163a1304"
+      sha256 "da664a62a5bbd3ff666a3746414ff397d18b6a63f08f3e8c8d5e77bf0f56e1af"
     end
   end
 
   on_linux do
     on_arm do
       url "https://github.com/jespern/marlin/releases/download/v#{version}/marlin-aarch64-linux.tar.gz"
-      sha256 "30e0eceb13dbb4e190a245f1c02560c5630906065a71c9442ccc206e75a0c045"
+      sha256 "a428b5ba405b106a15ccc5d8538b016791363b7d9c0b20ae26dfe99379471396"
     end
 
     on_intel do
       url "https://github.com/jespern/marlin/releases/download/v#{version}/marlin-x86_64-linux.tar.gz"
-      sha256 "f63c6a903211d318d64070f50c9194c92c963846177313c2c31dce046b181e8f"
+      sha256 "1cfbf2fe7c769442dcaa33cb6605ddcc8ba65b1d55307e21ba6bea436744c469"
     end
   end
 
