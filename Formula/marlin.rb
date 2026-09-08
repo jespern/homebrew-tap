@@ -1,30 +1,30 @@
 class Marlin < Formula
   desc "Fast, simple AI agent harness with durable, multiplexed sessions"
   homepage "https://marlin.wtf"
-  version "0.1.2"
+  version "0.1.4"
   license "Apache-2.0"
 
   on_macos do
     on_arm do
       url "https://github.com/jespern/marlin/releases/download/v#{version}/marlin-aarch64-darwin.tar.gz"
-      sha256 "de74d73784b4f2b285cfa4296048c57d0404d98291e158ab6e2460c3e93a4c69"
+      sha256 "afe79ba8ee6aeb97f114a136b3ba205de1ebe842731065f5ebab3804b1c48ea7"
     end
 
     on_intel do
       url "https://github.com/jespern/marlin/releases/download/v#{version}/marlin-x86_64-darwin.tar.gz"
-      sha256 "16ab18bb933557f94aeadbd6d94d6e521ccb7d75e02424c53b08dc777c177824"
+      sha256 "3a7ed9d982d69ad4d360cab0203df41d41371d49c18e540f63ee932e8e7bdd28"
     end
   end
 
   on_linux do
     on_arm do
       url "https://github.com/jespern/marlin/releases/download/v#{version}/marlin-aarch64-linux.tar.gz"
-      sha256 "0b16508beda6d948f4ae6d161c9fc58ca3b64b3478c5a4d70bd0927f7c5025a6"
+      sha256 "52c0bbcb11482f0259ed7f764afbc049a07a4b2dcb42b3a2fa49a5a29f5c01b2"
     end
 
     on_intel do
       url "https://github.com/jespern/marlin/releases/download/v#{version}/marlin-x86_64-linux.tar.gz"
-      sha256 "50833ca24b64efcb9175a07aa4a16b839221b4212a992b97cd8e378ece3f885a"
+      sha256 "d85d1b8cafe31467cbb7ae4253f6f39f2322967738b331fd8bbd1a14a8b6d9d5"
     end
   end
 
